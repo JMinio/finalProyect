@@ -1,0 +1,22 @@
+body{
+    
+    color: white;
+}
+
+.navBar{
+    height: 70px;
+}
+.navBar a{
+    margin-top: 10px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: white;
+    height: 45px;
+    font-size: 25px;
+}
+
+.navBar a:hover{
+    text-shadow: 0px 0px 5px aliceblue;
+    color:aqua;
+    transition: 0.5s;
+}
