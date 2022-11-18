@@ -49,14 +49,7 @@ export default function CartProvider({ children }) {
             })
             updateCart(newCart)
         }
-        //Si existe el elemento
-/*         if (isInCart(item && item.id)) {
-            console.log("Elemento con ID ya existente.");
-        }
-        //Si no existe el elemento
-        console.log(cart);
-        updateCart([...cart], { ...item, quantity: quantity }); */
-
+        
     };
 
     const aumentarItem = (id) => {

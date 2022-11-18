@@ -22,7 +22,7 @@ const ItemDetail = () => {
   return (
     <>
       <div className="item-box">
-        <h1>{car.brand} {car.model}</h1>
+        <h1>DETALLE DEL VEHÍCULO</h1>
         <div className="item-desc">
           <img className="item-image" src={`../images/${car.image}`} />
           <ul className="item-items">
@@ -31,11 +31,11 @@ const ItemDetail = () => {
             <li className="item-list item-desc__price">Precio: <b>${car.price}</b></li>
             <li className="item-list item-desc__stock">Color: <b>{car.color}</b></li>
             <li className="item-list item-desc__stock">Disponibilidad: <b>{car.stock}</b></li>
-            <div className="addToCart">
+            <div className="CartBox">
               <ItemCount />
             </div>
             <Link to={'/shopcart'}>
-              <button onClick={() => addItemToCart({ marca: "hola", price: 2500, cantidad: "quantity" })}> Add to Cart </button>
+              <button className="addToCart" onClick={() => addItemToCart({})}> Add to Cart </button>
             </Link>
           </ul>
         </div>

@@ -1,27 +1,28 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import carsApi from '../../../APIrest/galeryApi';
-import Card from '../Item/Item';
-import "./itemCount.css";
+import { useState, useContext } from 'react';
+import "../ItemDetailContainer/item-style.css"; 
+import { CartContext } from '../../../Context/CartContext';
 
+function ItemCount({ stock}) {
 
-function ItemCount({ stock }) {
-    const [quantity, setQuantity] = useState(0);
-    
+    const [value, setValue] = useState(1);
+
     function onAdd() {
-        (stock) > quantity ? setQuantity(quantity + 1) : setQuantity(quantity);
+        (stock) > value ? setValue(value + 1) : setValue(value + 0);
     }
 
     function onSubstract() {
-        quantity !== 0 ? setQuantity(quantity - 1) : setQuantity(quantity);
-    }
+        value !== 0 ? setValue(value - 1) : setValue(value + 0);
+    } 
+
+
 
     return (
-        <div className="addToCart">
-            <button className="increase" onClick={() => onAdd()}> + </button>
-            <p> Hola</p>
-            <button className="decrease"onClick={() => onSubstract()}> - </button>
-        </div>
+        <>        
+            <button className="button-cart" onClick={()=>onAdd()}>-</button>
+            <b>{value}</b>
+            <button className="button-cart" onClick={()=>onSubstract()}>+</button>
+        </>
     )
 
 }

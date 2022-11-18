@@ -11,10 +11,16 @@ h1{
     margin: 20px 15px 20px 25px;
     font-size: 20px;
 }
+
+input {
+    color: white;
+    background-color: black;
+}
 .catalogo{
     margin-top:40px;
     color: black;
 }
 .principal-container{
     padding: 15px;
+    background-color:darkgrey;
 }
