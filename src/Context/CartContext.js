@@ -10,11 +10,7 @@ export const CartContext = createContext({
 
 export default function CartProvider({ children }) {
     const [cart, updateCart] = useState([]);
-
-    /* const getFromCart = (id) => {
-        return cart.find((ord) => ord.id === id); //Lo que se busca es buscar en el carrito alguna orden con el ID pasado por props.
-    } */
-
+    
     const isInCart = (id) => {
         return cart.some((prod) => prod.id === id); //prod hace referencia a cada item.
     }

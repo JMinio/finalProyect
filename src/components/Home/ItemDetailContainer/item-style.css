@@ -18,10 +18,10 @@
 .item-desc{
     display: flex;
     background-color: grey;
-    width: 70%;
+    width: 80%;
     height: 70vh;
     border-radius: 4px;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 .item-image{
@@ -69,5 +69,6 @@ b{
 }
 
 .addToCart{
+
     border-radius: 20px;
 }

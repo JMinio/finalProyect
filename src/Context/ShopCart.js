@@ -10,7 +10,7 @@ const ShopCart = () => {
     return (
     <>
         <div className="carrito">
-
+            <h1>Bienvenido al carrito de compras</h1>
         </div>  
     </>
     )

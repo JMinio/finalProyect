@@ -34,9 +34,9 @@ const ItemDetail = () => {
             <div className="CartBox">
               <ItemCount />
             </div>
-            <Link to={'/shopcart'}>
+{/*             <Link to={'/shopcart'}>
               <button className="addToCart" onClick={() => addItemToCart({})}> Add to Cart </button>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>

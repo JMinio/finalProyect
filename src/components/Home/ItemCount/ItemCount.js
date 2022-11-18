@@ -1,30 +1,44 @@
-import React from 'react';
-import { useState, useContext } from 'react';
-import "../ItemDetailContainer/item-style.css"; 
-import { CartContext } from '../../../Context/CartContext';
 
-function ItemCount({ stock}) {
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-    const [value, setValue] = useState(1);
+export default function ItemCount({ stock, onAdd }) {
+  const [quantity, setquantity] = useState(1);
 
-    function onAdd() {
-        (stock) > value ? setValue(value + 1) : setValue(value + 0);
-    }
+  const decrease = () => {
+    setquantity(quantity - 1);
+  };
+  const increase = () => {
+    setquantity(quantity + 1);
+  };
 
-    function onSubstract() {
-        value !== 0 ? setValue(value - 1) : setValue(value + 0);
-    } 
-
-
-
-    return (
-        <>        
-            <button className="button-cart" onClick={()=>onAdd()}>-</button>
-            <b>{value}</b>
-            <button className="button-cart" onClick={()=>onSubstract()}>+</button>
-        </>
-    )
-
+  return (
+    <>
+      <div>
+        <Button
+          className="button-cart btn-dark"
+          disabled={quantity <= 1}
+          onClick={decrease}
+        >
+          -
+        </Button>
+        <span>{quantity}</span>
+        <Button
+          className="button-cart btn-dark"
+          disabled={quantity >= stock}
+          onClick={increase}
+        >
+          +
+        </Button>
+        <br />
+        
+        <Link to="./shopcart">
+        <Button disabled={stock <= 0} onClick={() => onAdd(quantity)}>
+          Agregar al carrito
+        </Button>
+        </Link>
+      </div>
+    </>
+  );
 }
-
-export default ItemCount;
