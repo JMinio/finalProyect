@@ -35,7 +35,6 @@ export default function CartProvider({ children }) {
     }
 
     const addItemToCart = (id, quantity, price,image) => {
-        
         if(isInCart(id) == true){
             const newCart = cart.map(i=>{
                 if(i.id === id){
@@ -45,7 +44,6 @@ export default function CartProvider({ children }) {
             })
             updateCart(newCart)
         }
-        
     };
 
     const aumentarItem = (id) => {
